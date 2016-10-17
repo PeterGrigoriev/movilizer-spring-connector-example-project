@@ -1,7 +1,7 @@
 package com.movilizer.connector.example.requestprint;
 
 
-import com.movilitas.movilizer.v14.MovilizerResponse;
+import com.movilitas.movilizer.v15.MovilizerResponse;
 import com.movilizer.connector.MovilizerConnectorAPI;
 import com.movilizer.connector.example.ExcludeExamplesConfiguration;
 import com.movilizer.connector.model.Processor;
@@ -34,12 +34,7 @@ public class RequestPrinterConfiguration {
         @PostConstruct
         void registerCallbacks() {
             logger.info("Registering processor");
-            movilizerConnector.registerProcessor(new Processor<MovilizerResponse>() {
-                @Override
-                public void process(MovilizerResponse response) {
-                    logger.info("New response:\n\n" + mds.responseToString(response) + "\n\n");
-                }
-            }, MovilizerResponse.class);
+            movilizerConnector.registerProcessor(response -> logger.info("New response:\n\n" + mds.responseToString(response) + "\n\n"), MovilizerResponse.class);
         }
     }
 }
