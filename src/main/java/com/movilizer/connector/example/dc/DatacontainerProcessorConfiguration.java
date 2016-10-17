@@ -1,7 +1,7 @@
 package com.movilizer.connector.example.dc;
 
 
-import com.movilitas.movilizer.v14.MovilizerUploadDataContainer;
+import com.movilitas.movilizer.v15.MovilizerUploadDataContainer;
 import com.movilizer.connector.MovilizerConnectorAPI;
 import com.movilizer.connector.example.ExcludeExamplesConfiguration;
 import com.movilizer.connector.mapper.direct.GenericDataContainerMapperImpl;
